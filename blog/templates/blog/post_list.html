@@ -96,10 +96,13 @@
                         <div class="tx"><a href="{{ p.get_absolute_url }}" id="read-more-post-{{ p.pk }}">{{ p.title }}</a></div>
                     {% endif %}
                 {% endfor %}
-
-                <a href="{{ category.get_absolute_url }}" class="section_more">
-                    <span class="ico"></span> 더보기
-                </a>
+                {% for category in category_list %}
+                    {% if category.name == "한식" %}
+                        <a href="{{ category.get_absolute_url }}" class="section_more">
+                            <span class="ico"></span> 더보기
+                        </a>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
         <div class="inn">
@@ -111,9 +114,11 @@
                     {% endif %}
                 {% endfor %}
                 {% for category in category_list %}
-                <a href="{{ category.get_absolute_url }}" class="section_more">
-                    <span class="ico"></span> 더보기
-                </a>
+                    {% if category.name == "중식" %}
+                        <a href="{{ category.get_absolute_url }}" class="section_more">
+                            <span class="ico"></span> 더보기
+                        </a>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>
@@ -125,9 +130,13 @@
                         <div class="tx"><a href="{{ p.get_absolute_url }}">{{ p.title }}</a></div>
                     {% endif %}
                 {% endfor %}
-                <a href="{{ category.get_absolute_url }}" class="section_more">
-                    <span class="ico"></span> 더보기
-                </a>
+                {% for category in category_list %}
+                    {% if category.name == "일식" %}
+                        <a href="{{ category.get_absolute_url }}" class="section_more">
+                            <span class="ico"></span> 더보기
+                        </a>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
         <div class="inn">
@@ -136,6 +145,10 @@
                 {% for p in object_list %}
                     {% if p.category.name == "양식" %}
                         <div class="tx"><a href="{{ p.get_absolute_url }}">{{ p.title }}</a></div>
+                    {% endif %}
+                {% endfor %}
+                {% for category in category_list %}
+                    {% if category.name == "양식" %}
                         <a href="{{ category.get_absolute_url }}" class="section_more">
                             <span class="ico"></span> 더보기
                         </a>
