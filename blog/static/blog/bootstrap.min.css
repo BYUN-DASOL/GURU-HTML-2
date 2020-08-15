@@ -1,6 +1,5 @@
- .col-6 col-md-3{position:relative;width:100%;padding-right:15px;padding-left:15px}
- .col-6 col-md-3{position:absolute;min-width:800px;padding-right:0px;padding-left:26em;}
- .col-md-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}
+ #container #content .inn .row .col-5{position:relative;width:100%;padding-right:0px;padding-left:15px}
+ .inn .row .col-md-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}
  .card-body{-ms-flex:1 1 auto;flex:1 1 auto;padding:1.25rem}
  .card-title{margin-bottom:.75rem}
  .card-img-top{width:100%;border-top-left-radius:calc(.25rem - 1px);border-top-right-radius:calc(.25rem - 1px)}

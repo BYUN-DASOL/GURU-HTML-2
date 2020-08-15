@@ -17,12 +17,10 @@ a:hover,a:active,a:focus{text-decoration:underline}
 }
 #header {
     padding: 20px;
-    background-color: red;
 }
 #container {
     padding-bottom: 40px;
     *zoom: 1;
-    background-color: lime;
 }
 #container:after {
     content: '';
@@ -32,16 +30,22 @@ a:hover,a:active,a:focus{text-decoration:underline}
 #container .snb {
     float: left;
     width: 20%;
+    padding-right:10px;
+    padding-left:20px;
     padding-top: 60px;
-    background-color: green;
 }
-#container .snb .inn {
+#container .snb .header{
+    padding-bottom: 10px;
+}
+#container .snb .team{
+    padding-top: 400px;
+}
+#container .inn {
     padding-top: 200px;
 }
 #container .aside {
     float: right;
     width: 20%;
-    background-color: green;
 }
 #container .aside .inn {
     padding: 20px;
@@ -49,7 +53,6 @@ a:hover,a:active,a:focus{text-decoration:underline}
 #container #content {
     float: left;
     width: 60%;
-    background-color: purple;
 }
 #container #content .inn {
     padding: 20px;
@@ -91,4 +94,15 @@ a:hover,a:active,a:focus{text-decoration:underline}
     border: 4px solid #aaa;
     border-width: 4px 0 4px 4px;
     border-color: transparent transparent transparent #aaa;
+}
+
+.card-post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  padding: 50px 5px 0px
 }
