@@ -1,7 +1,9 @@
-from django.shortcuts import render
+import math
+
+from django.shortcuts import render, get_object_or_404
 from .models import Post, Category
 from django.views.generic import ListView, DetailView
-
+from django.core.paginator import Paginator
 
 
 class PostList(ListView):
@@ -32,6 +34,21 @@ def PostListByCategory(request, slug):
             'category_post': category_post,
          }
     )
+
+def index(request):
+    posts = Post.objects.all().order_by('-published_date')
+    paginator = Paginator(posts, 10)
+    page = request.GET.get('page')
+    contacts = paginator.get_page(page)
+    page_range = 5
+    current_block = math.ceil(int(page)/page_range)
+    start_block = (current_block-1) * page_range
+    end_block = start_block + page_range
+    p_range = paginator.page_range[start_block:end_block]
+    return render(request, 'blog/index.html', {
+        'contacts' : contacts,
+        'p_range' : p_range,
+    })
 
 # def document_list(request):
 #     # documents = Document.objects.all()
