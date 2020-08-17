@@ -1,4 +1,5 @@
 <!doctype html>
+{% load static %}
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -6,35 +7,52 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ category }}</title>
+    <link rel="stylesheet" href="/static/blog/bootstrap.css?after">
+    <link rel="stylesheet" href="/static/blog/bootstrap.min.css?after">
+    <link rel="stylesheet" href="/static/blog/layout.css?after">
+    <!--    <link rel="stylesheet" href="/static/css/app.css">-->
+    <link rel="css/subcide.css" href="stylesheet">
+
 </head>
 
 <body>
 
-<div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-    <div class="container">
-        <a href="../" class="navbar-brand">백종원의 레시피</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="themes">종류<span class="caret"></span></a>
-                    <div class="dropdown-menu" aria-labelledby="themes">
-                        <a class="dropdown-item" href="../Korea/">한식</a> #이거 카테고리 이동경로 어디로 이동시켜야할지 몰라서
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="../China/">중식</a> #일단 영어 대충 아무거나 써논거에요!
-                        <a class="dropdown-item" href="../Western/">양식</a> #양식이랑 일식 모두 마찬가지요!
-                        <a class="dropdown-item" href="../Japen/">일식</a>
-                    </div>
+<!-- 네비게이션 바 -->
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">백종원의 레시피</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">종류<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">한식</a></li>
+                        <li><a href="#">중식</a></li>
+                        <li><a href="#">일식</a></li>
+                        <li><a href="#">양식</a></li>
+                    </ul>
                 </li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
 
-        </div>
-    </div>
-</div>
 
-
+<!-- 게시글 -->
 <div id="content">
     <div class="inn">
         <h1 class="my-4">게시물</h1>
@@ -46,7 +64,7 @@
                 </a>
             </div>
             <div class="col-5">
-                <a class="title" href="#"><h3>제목 1</h3></a>
+                <a class="title" href="#"><h2>제목 1</h2></a>
                 <a class="post" href="#">게시시간 + 댓글 수</a>
             </div>
         </div>
@@ -62,7 +80,7 @@
                 </a>
             </div>
             <div class="col-5">
-                <a class="title" href="#"><h3>제목 2</h3></a>
+                <a class="title" href="#"><h2>제목 2</h2></a>
                 <a class="post" href="#">게시시간 + 댓글 수</a>
             </div>
         </div>
@@ -78,7 +96,7 @@
                 </a>
             </div>
             <div class="col-5">
-                <a class="title" href="#"><h3>제목 3</h3></a>
+                <a class="title" href="#"><h2>제목 3</h2></a>
                 <a class="post" href="#">게시시간 + 댓글 수</a>
             </div>
         </div>
@@ -94,33 +112,32 @@
                 </a>
             </div>
             <div class="col-5">
-                <a class="title" href="#"><h3>제목 4</h3></a>
+                <a class="title" href="#"><h2>제목 4</h2></a>
                 <a class="post" href="#">게시시간 + 댓글 수</a>
             </div>
         </div>
     </div>
 
-    <div class="pagination">
-        <span class="step-links">
-            {% if contacts.has_previous %}
-                <a href="?page=1">&laquo; first</a>
-                <a href="?page={{ contacts.previous_page_number
-             }}">previous</a>
-            {% endif %}
-
-            {% for i in p_range %}
-                <a href="?page={{i}}" {% if contacts.nubmer == i
-                   %}class="active" {% endif %}>{{i}}</a>
-            {% endfor %}
-
-            {% if contacts.has_next %}
-                <a href="?page={{ contacts.next_page_number
-                }}">next</a>
-                <a href="?page={{ contacts.paginator.num_pages
-                 }}">last &raquo;</a>
-            {% endif %}
-        </span>
-    </div>
+    <!-- #페이지네이션 -->
+    <nav>
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 
 </body>
 </html>
