@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>백종원의 레시피</title>
-    <link rel="stylesheet" href="/static/blog/bootstrap.css">
-    <link rel="stylesheet" href="/static/blog/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/blog/layout.css">
+    <link rel="stylesheet" href="/static/blog/bootstrap.css?after">
+    <link rel="stylesheet" href="/static/blog/bootstrap.min.css?after">
+    <link rel="stylesheet" href="/static/blog/layout.css?after">
 <!--    <link rel="stylesheet" href="/static/css/app.css">-->
     <link rel="css/subcide.css" href="stylesheet">
 </head>
@@ -42,8 +42,8 @@
                 <li><a href="https://programs.sbs.co.kr/enter/2019taste/main?div=entersectionmain_allprogram">맛남의 광장</a></li>
             </ul>
         </div>
-        <section class="team">
-            <h3 class="tle">OUR TEAM</h3>
+        <div class="team">
+            <h5 class="tle">| DEVELOPER</h5>
             <ul class="human">
                 <li>
                     <figure>
@@ -82,7 +82,7 @@
                     </figure>
                 </li>
             </ul>
-        </section>
+        </div>
         </div>
         <!-- //snb -->
         <!-- aside -->
@@ -169,7 +169,7 @@
                                 <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/500x300" alt="">
                             </a>
                         </div>
-                        <div class="col-6 col-md-3">
+                        <div class="col-5">
                             <a class="title" href="#"><h3>Project One</h3></a>
                             <a class="post" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</a>
                         </div>
@@ -185,7 +185,7 @@
                                 <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/500x300" alt="">
                             </a>
                         </div>
-                        <div class="col-6 col-md-3">
+                        <div class="col-5">
                             <a class="title" href="#"><h3>Project Two</h3></a>
                             <a class="post" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</a>
                         </div>
@@ -201,7 +201,7 @@
                                 <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/500x300" alt="">
                             </a>
                         </div>
-                        <div class="col-6 col-md-3">
+                        <div class="col-5">
                             <a class="title" href="#"><h3>Project Three</h3></a>
                             <a class="post" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolore dolorum earum est, eveniet, illo modi molestiae necessitatibus, perspiciatis quia quo sed. A doloribus excepturi in incidunt mollitia nobis praesentium, quas suscipit temporibus tenetur vel.</a>
                         </div>
@@ -217,7 +217,7 @@
                                 <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/500x300" alt="">
                             </a>
                         </div>
-                        <div class="col-6 col-md-3">
+                        <div class="col-5">
                             <a class="title" href="#"><h3>Project Four</h3></a>
                             <a class="post" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolorem dolorum, eius enim eum excepturi, id labore laudantium numquam, odit officiis omnis optio perspiciatis praesentium quos rerum sed tenetur ullam? Aperiam dolores provident rem saepe!</a>
                         </div>
@@ -225,7 +225,7 @@
         </div>
                     <!-- Page Content -->
 
-                    <div class="row">
+                    <div class="card-post">
                             {% for p in object_list %}
                                     <div class="col-lg-4 col-sm-6 mb-4">
                                         <div class="card h-100">

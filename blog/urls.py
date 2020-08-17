@@ -16,6 +16,7 @@ Including another URLconf
 from django.urls import path
 from blog import views
 
+
 urlpatterns = [
     path('blog/category/<str:slug>/', views.PostListByCategory),
     path('blog/<int:pk>/', views.PostDetail.as_view()),
