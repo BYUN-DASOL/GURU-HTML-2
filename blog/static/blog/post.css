@@ -20,9 +20,10 @@ a:hover,a:active,a:focus{text-decoration:underline}
   }
   .fixed_img_col {}
   .fixed_img_col ul {
-    padding: 10px 0px 20px;
+    padding: 10px 10px 20px;
     /*border-bottom: 1px solid #ccc;*/
     *zoom:1;
+
   }
   .fixed_img_col ul:after{
     content:'';
@@ -34,11 +35,12 @@ a:hover,a:active,a:focus{text-decoration:underline}
     width: 120px;
     height: 175px;
     /*border-bottom: 1px solid #ccc;*/
-    padding: 15px 0 15px;
+    padding: 10px 0 10px ;
     /*margin-top:-1px;
     margin-bottom:-1px;*/
     margin:30px;
-    padding:-20px;
+    padding:0px;
+        background-color:red;
   }
   .fixed_img_col li a{
     display: block;
@@ -50,14 +52,16 @@ a:hover,a:active,a:focus{text-decoration:underline}
     display: block;
   }
   .fixed_img_col li a .thumb img {}
+
   .fixed_img_col li a .thumb em {
+
     display: none;
     opacity: .6;
     position: absolute;
     left: 0;
     top: 0;
     width :100%;
-    background-color: #000;
+    background-color: #333;
     color: #fff;
     font-weight: bold;
     text-align: center;
@@ -68,15 +72,7 @@ a:hover,a:active,a:focus{text-decoration:underline}
   .fixed_img_col li a:hover .thumb em {
     display: block;
   }
-  .fixed_img_col li a strong {
-    display: block;
-    padding: 6px 0 2px;
-    text-decoration: none;
-    line-height: 1.4;
-  }
-  .fixed_img_col li a:hover strong {
-    text-decoration: underline;
-  }
+
   .fixed_img_col li p {
     color: #666;
     font-size: .9em;
@@ -92,12 +88,10 @@ a:hover,a:active,a:focus{text-decoration:underline}
 
 
 /* TopButton Style*/
-  .top{
+  .btn btn-secondary float-right{
   position: absolute;
   margin: 50px 20px 0;
   right:50px;
   }
   .btn_pack{}
   .btn_pack button:hover
-
-   }

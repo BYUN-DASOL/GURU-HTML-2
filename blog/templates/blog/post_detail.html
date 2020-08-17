@@ -13,9 +13,42 @@
     <link rel="stylesheet" href="/static/blog/post.css?after">
 <!--    <link rel="stylesheet" href="/static/css/app.css">-->
     <link rel="css/subcide.css" href="stylesheet">
+
+
+  <link href="https://startbootstrap.github.io/startbootstrap-shop-item/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="https://startbootstrap.github.io/startbootstrap-shop-item/css/shop-item.css" rel="stylesheet">
+
 </head>
 
 <body>
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">홈버튼</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 <!-- Page Content -->
 <div class="content">
@@ -24,9 +57,9 @@
   <h1 class="my-4">{{ object.title }}
     <small>-{{ object.category }}</small>
   </h1>
-    <p><pre>{{object.content}}
-    <img class="card-img-top" src="{{ object.head_image.url }}" alt="">
-</pre></p>
+    <p>{{object.content}}
+        <img class="card-img-top" src="{{ object.head_image.url }}" alt=""></p>
+
   <div class="fixed_img_col">
     <ul>
     <li>
@@ -76,16 +109,17 @@
 	</span>
 </div>
 
-<!--Top 버튼-->
+<!--Top 버튼
     <div class="top">
-    <span class="btn_top">
-    <a href="#">
-        <button>Top</button>
-    </a>
-    </span>
+    <a href="#"><img src="static/img/top.png" alt=""></a>
     </div>
 
-</div>
+</div>-->
+
+    <button class="btn btn-secondary float-right" type="button">TOP
+    <a href="#"></a></button>
+
+
 <!-- /.container -->
 
 
