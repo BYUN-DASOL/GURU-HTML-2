@@ -57,7 +57,7 @@
   <h1 class="my-4">{{ object.title }}
     <small>-{{ object.category }}</small>
   </h1>
-    <p>{{object.content}}
+    <p>{{object.get_markdown_content | safe}}
         <img class="card-img-top" src="{{ object.head_image.url }}" alt=""></p>
 
   <div class="fixed_img_col">
