@@ -1,10 +1,11 @@
 import math
 
+from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from .models import Post, Category
 from django.views.generic import ListView, DetailView
-from django.core.paginator import Paginator
-
+from django.db.models import Q
 
 class PostList(ListView):
     model = Post
@@ -18,8 +19,16 @@ class PostList(ListView):
 
         return context
 
+class PostSearch(PostList):
+    def get_queryset(self):
+        q = self.kwargs['q']
+        object_list = Post.objects.filter(Q(title__contains=q) | Q(content__contains=q))
+        return object_list
+
+
 class PostDetail(DetailView):
     model = Post
+
 
 
 def PostListByCategory(request, slug):
@@ -45,41 +54,7 @@ def index(request):
     start_block = (current_block-1) * page_range
     end_block = start_block + page_range
     p_range = paginator.page_range[start_block:end_block]
-    return render(request, 'blog/index.html', {
-        'contacts' : contacts,
-        'p_range' : p_range,
+    return render(request, 'blog/category_detail.html', {
+        'contacts': contacts,
+        'p_range': p_range,
     })
-
-# def document_list(request):
-#     # documents = Document.objects.all()
-#
-#     page = int(request.GET.get('page', 1))
-#
-#     paginated_by = 2
-#
-#     documents = get_list_or_404(Document)
-#
-#     total_count = len(documents)
-#     total_page = math.ceil(total_count/paginated_by)
-
-# def post_detail(request, pk):
-#     blog_post = Post.objects.get(pk=pk)
-#
-#     return render(
-#         request,
-#         'blog/post_detail.html',
-#         {
-#             'blog_post': blog_post,
-#          }
-#     )
-
-# def index(request):
-#     posts = Post.objects.all()
-#
-#     return render(
-#         request,
-#         'blog/index.html',
-#         {
-#             'posts': posts,
-#         }
-#     )
