@@ -2,177 +2,26 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ object.title }}</title>
 
-
-  <link href="https://startbootstrap.github.io/startbootstrap-shop-item/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="https://startbootstrap.github.io/startbootstrap-shop-item/css/shop-item.css" rel="stylesheet">
-
-  <style>
-  #content{
-    width:800px;
-    margin:0 auto;
-  }
-
-  .fixed_img_col {}
-  .fixed_img_col ul {
-    padding: 300px 0px 250px;
-    /*border-bottom: 1px solid #ccc;*/
-    *zoom:1;
-  }
-  .fixed_img_col ul:after{
-    content:'';
-    display:block;
-    clear: both;
-  }
-  .fixed_img_col li {
-    float: left;
-    width: 120px;
-    height: 175px;
-
-    padding: 15px 0 15px;
-
-    margin:30px;
-    padding:-20px;
-  }
-  .fixed_img_col li a{
-    display: block;
-    color: #333;
-    text-decoration: none;
-  }
-  .fixed_img_col li a .thumb {
-    position: relative;
-    display: block;
-  }
-  .fixed_img_col li a .thumb img {}
-  .fixed_img_col li a .thumb em {
-    display: none;
-    opacity: .6;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width :100%;
-    background-color: #000;
-    color: #fff;
-    font-weight: bold;
-    text-align: center;
-    line-height:120px;
-
-  }
-  .fixed_img_col li a:hover .thumb em {
-    display: block;
-  }
-  .fixed_img_col li a strong {
-    display: block;
-    padding: 6px 0 2px;
-    text-decoration: none;
-    line-height: 1.4;
-  }
-  .fixed_img_col li a:hover strong {
-    text-decoration: underline;
-  }
-  .fixed_img_col li p {
-    color: #666;
-    font-size: .9em;
-  }
-
-  .area{
-  position: absolute;
-  margin: -250px 20px 0;
-  right:100px;
-  }
-  .btn_pack{}
-  .btn_pack button:hover
-
-
-/*Button Style*/
-  .area{
-    position:absolute;
-    left:300px;
-    top:50px;
-  }
-  .btn_pack{}
-  .btn_pack button:hover
-
-  </style>
-
 </head>
+
 <body>
 
-<h1>{{ object.title }}</h1>
-<pre>{{ object.content }}</pre>
+<!-- Page Content -->
+<div class="container">
 
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">홈버튼</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Page Content -->
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-xs-3">
-        <h1 class="my-4">게시물 이름</h1>
-        <div class="list-group">
-          <a href="#" class="list-group-item active">현재위치한 카테고리</a>
-          <!--<a href="#" class="list-group-item">Category 2</a>
-          <a href="#" class="list-group-item">Category 3</a>-->
-      </div>
-
-      <!-- /.col-lg-3 -->
-
-      <div class="col-xs-9">
-
-        <div class="card mt-4">
-          <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
-          <div class="card-body">
-            <h3 class="card-title">음식</h3>
-            <h4>조리 방법</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
-            <!--<span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-            4.0 stars-->
-          </div>
-        </div>
-        <!-- /.card -->
-<div id="content">
-  <!-- UI Object -->
-  <!--<h1>이 블로그 카테고리 글</h1>-->
+  <!-- Portfolio Item Heading -->
+  <h1 class="my-4">{{ object.title }}
+    <small>{{ object.category }}</small>
+  </h1>
+    <p><pre>{{object.content}}</pre></p>
   <div class="fixed_img_col">
     <ul>
     <li>
       <a href="#">
         <span class="thumb">
-          <img src ="static/img/apple-touch-icon.png" alt="">
+          <img src ="img/apple-touch-icon.png" alt="">
           <em>Category</em>
         </span>
         <!--<strong>이미지 제목</strong>-->
@@ -183,7 +32,7 @@
     <li>
       <a href="#">
         <span class="thumb">
-          <img src ="static/img/apple-touch-icon.png" alt="">
+          <img src ="img/apple-touch-icon.png" alt="">
           <em>Category</em>
         </span>
         <!--<strong>이미지 제목</strong>-->
@@ -194,7 +43,7 @@
     <li>
       <a href="#">
         <span class="thumb">
-          <img src ="static/img/apple-touch-icon.png" alt="">
+          <img src ="img/apple-touch-icon.png" alt="">
           <em>Category</em>
         </span>
         <!--<strong>이미지 제목</strong>-->
@@ -205,7 +54,7 @@
     <li>
       <a href="#">
         <span class="thumb">
-          <img src ="static/img/apple-touch-icon.png" alt="">
+          <img src ="img/apple-touch-icon.png" alt="">
           <em>Category</em>
         </span>
     <!--<strong>이미지 제목</strong>-->
@@ -214,33 +63,19 @@
     </li>
     </ul>
   </div>
-
-  <!-- UI Object -->
-<a style="display:scroll;position:fixed;bottom:10px;right:10px;" href="#" title=Top>
-<img src="static/img/top.png" width=50px" height="50px" border="0"/></a>
-
-
-
-  <!-- Footer -->
-  <!--<footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
-    </div>
-   /.container -->
-  <!-- </footer>-->
-
-  <!-- Bootstrap core JavaScript
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
-
-<!--Button-->
+    
 <div class= "area">
-  <span class="btn_pack">
-    <a href="#">
-      <button>전체 글 보기</button>
-    </a>
-  </span>
+	<span class="btn_pack">
+		<a href="#">
+			<button>전체 글 보기</button>
+		</a>
+	</span>
 </div>
+
+</div>
+<!-- /.container -->
+
+
 </body>
 </html>
 
