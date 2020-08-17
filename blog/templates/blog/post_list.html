@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="/static/blog/bootstrap.css?after">
     <link rel="stylesheet" href="/static/blog/bootstrap.min.css?after">
     <link rel="stylesheet" href="/static/blog/layout.css?after">
-<!--    <link rel="stylesheet" href="/static/css/app.css">-->
+<!--    <link rel="stylesheet" href="/static/css/app.css?after">-->
     <link rel="css/subcide.css" href="stylesheet">
 </head>
 <!-- UI Object -->
 <div id="wrap">
     <!-- header -->
     <div id="header">
-        <h1 class="logo"><a href="http://127.0.0.1:8000/"><img src="http://placehold.it/1100x120" alt="To home"></a></h1>
+        <h1 class="logo"><a href="http://127.0.0.1:8000/">백종원의 레시피</a></h1>
     </div>
     <!-- //header -->
     <!-- container -->
@@ -26,9 +26,9 @@
             <h5 class="header">검색</h5>
             <div class="body">
                 <div class="input-group">
-                    <input type="text" class="form-control">
+                    <input type="text" id="search-input" onkeyup="wait_for_enterkey()" class="form-control">
                     <span class="input-group-append">
-            <button class="btn btn-secondary" type="button">검색</button>
+            <button class="btn btn-secondary" type="button" onclick="search_post();">검색</button>
                             </span>
                 </div>
             </div>
@@ -238,17 +238,6 @@
                                         </div>
                                     </div>
                             {% endfor %}
-                        <div class="col-lg-4 col-sm-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Project Two</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
 
         </div>
@@ -257,4 +246,19 @@
     <!-- //container -->
 </div>
 <!-- //UI Object -->
+
+<script>
+    function search_post(){
+        var search_value = document.getElementById('search-input').value;
+        location.href="/blog/search/" + search_value + "/";
+    }
+
+    function wait_for_enterkey(){
+        if (window.event.keyCode == 13){
+            search_post();
+        }
+    }
+</script>
+
+
 </html>
