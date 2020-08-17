@@ -46,7 +46,7 @@
                      <small>-{{ object.category }}</small>
                  </h1>
                  <p><img class="img-fluid" src="{{ object.head_image.url }}" alt=""></p>
-                 <pre>{{ object.content }}</pre>
+                 <pre>{{ object.get_markdown_content | safe }}</pre>
              </div>
         </div>
     </div>
