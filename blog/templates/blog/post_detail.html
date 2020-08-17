@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ object.title }}</title>
-    
+
     <link rel="stylesheet" href="/static/blog/bootstrap.css?after">
     <link rel="stylesheet" href="/static/blog/bootstrap.min.css?after">
     <link rel="stylesheet" href="/static/blog/layout.css?after">
@@ -24,51 +24,45 @@
   <h1 class="my-4">{{ object.title }}
     <small>-{{ object.category }}</small>
   </h1>
-    <p><pre>{{object.content}}</pre></p>
+    <p><pre>{{object.content}}
+    <img class="card-img-top" src="{{ object.head_image.url }}" alt="">
+</pre></p>
   <div class="fixed_img_col">
     <ul>
     <li>
       <a href="#">
         <span class="thumb">
-          <img src ="static/img/apple-touch-icon.png" alt="">
+           <a href="{{ object.get_absolute_url }}"><img class="card-img-top" src="{{ object.head_image.url }}" alt=""></a>
           <em>Category</em>
         </span>
-        <!--<strong>이미지 제목</strong>-->
       </a>
-      <!--<p>2020-08-13</p>-->
     </li>
 
     <li>
       <a href="#">
         <span class="thumb">
-          <img src ="static/img/apple-touch-icon.png" alt="">
+           <a href="{{ object.get_absolute_url }}"><img class="card-img-top" src="{{ object.head_image.url }}" alt=""></a>
           <em>Category</em>
         </span>
-        <!--<strong>이미지 제목</strong>-->
       </a>
-      <!--<p>2020-08-13</p>-->
     </li>
 
     <li>
       <a href="#">
         <span class="thumb">
-          <img src ="static/img/apple-touch-icon.png" alt="">
+          <a href="{{ object.get_absolute_url }}"><img class="card-img-top" src="{{ object.head_image.url }}" alt=""></a>
           <em>Category</em>
         </span>
-        <!--<strong>이미지 제목</strong>-->
       </a>
-      <!--<p>2020-08-13</p>-->
     </li>
 
     <li>
       <a href="#">
         <span class="thumb">
-          <img src ="static/img/apple-touch-icon.png" alt="">
+           <a href="{{ object.get_absolute_url }}"><img class="card-img-top" src="{{ object.head_image.url }}" alt=""></a>
           <em>Category</em>
         </span>
-    <!--<strong>이미지 제목</strong>-->
       </a>
-      <!--<p>2020-08-13</p>-->
     </li>
     </ul>
   </div>
