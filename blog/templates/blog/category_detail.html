@@ -3,145 +3,85 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ category }}</title>
-    <link rel="stylesheet" href="/static/blog/bootstrap.css?after">
-    <link rel="stylesheet" href="/static/blog/bootstrap.min.css?after">
-    <link rel="stylesheet" href="/static/blog/layout.css?after">
-    <!--    <link rel="stylesheet" href="/static/css/app.css">-->
-    <link rel="css/subcide.css" href="stylesheet">
-
-    <!-- Bootstrap core CSS -->
+     <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/static/blog/category.css?after">
     <link href="https://startbootstrap.github.io/startbootstrap-small-business/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="https://startbootstrap.github.io/startbootstrap-small-business/css/small-business.css" rel="stylesheet">
-
 </head>
-
 <body>
+<div id="wrap">
+    <div id="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="http://127.0.0.1:8000/">백종원의 레시피</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">백종원의 레시피</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <li class="nav-item">
-                <a class="nav-link" href="#">한식</a>
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:8000/blog/category/한식/">한식</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:8000/blog/category/중식/">중식</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:8000/blog/category/일식/">일식</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://127.0.0.1:8000/blog/category/양식/">양식</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div id="container">
+        <!-- 게시글 -->
+        <div id="content">
+            <div class="inn">
+                <h1 class="my-4">{{ category }}</h1>
+                <!-- Project One -->
+                {% for p in category_post %}
+                <div class="row">
+                    <div class="col-md-7">
+                        <a href="{{ p.get_absolute_url }}">
+                            <img class="img-fluid rounded mb-3 mb-md-0" src="{{ p.head_image.url }}" alt="음식 사진">
+                        </a>
+                    </div>
+                    <div class="col-5">
+                        <a class="title" href="{{ p.get_absolute_url }}"><h4>{{ p.title }}</h4></a>
+                        <p class="post">{{ p.created }} + 댓글 수</p>
+                    </div>
+                </div>
+                <hr>
+                {% endfor %}
+                <!-- /.row -->
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <ul class="pagination"><!-- #페이지네이션 -->
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">중식</a>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">일식</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">양식</a>
-            </li>
-            </ul>
-        </div>
+        </ul>
     </div>
-</nav>
-
-<!-- Page Content -->
-<div class="container">
-    <!-- Heading Row -->
-    <!-- Project One -->
-    <div class="row align-items-center my-5">
-        <div class="col-lg-7">
-            <img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/800x400" alt="">
-        </div>
-        <!-- /.col-lg-8 -->
-        <div class="col-lg-5">
-            <h1 class="font-weight-light">게시글</h1>
-            <p>게시 시간 + 댓글 수</p>
-            <a class="btn btn-primary" href="#">Read More!</a>
-        </div>
-        <!-- /.col-md-4 -->
-    </div>
-    <!-- /.row -->
-
-    <!-- Project Two -->
-    <div class="row align-items-center my-5">
-        <div class="col-lg-7">
-            <img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/800x400" alt="">
-        </div>
-        <!-- /.col-lg-8 -->
-        <div class="col-lg-5">
-            <h1 class="font-weight-light">게시글</h1>
-            <p>게시 시간 + 댓글 수</p>
-            <a class="btn btn-primary" href="#">Read More!</a>
-        </div>
-        <!-- /.col-md-4 -->
-    </div>
-
-    <!-- Project Three -->
-    <div class="row align-items-center my-5">
-        <div class="col-lg-7">
-            <img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/800x400" alt="">
-        </div>
-        <!-- /.col-lg-8 -->
-        <div class="col-lg-5">
-            <h1 class="font-weight-light">게시글</h1>
-            <p>게시 시간 + 댓글 수</p>
-            <a class="btn btn-primary" href="#">Read More!</a>
-        </div>
-        <!-- /.col-md-4 -->
-    </div>
-
-    <!-- Project Four -->
-    <div class="row align-items-center my-5">
-        <div class="col-lg-7">
-            <img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/800x400" alt="">
-        </div>
-        <!-- /.col-lg-8 -->
-        <div class="col-lg-5">
-            <h1 class="font-weight-light">게시글</h1>
-            <p>게시 시간 + 댓글 수</p>
-            <a class="btn btn-primary" href="#">Read More!</a>
-        </div>
-        <!-- /.col-md-4 -->
-    </div>
-
 </div>
-
-
-<!-- #페이지네이션 -->
-
-<div>
-    <ul class="pagination">
-        <li class="page-item disabled">
-            <a class="page-link" href="#">&laquo;</a>
-        </li>
-        <li class="page-item active">
-            <a class="page-link" href="#">1</a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="#">2</a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="#">4</a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="#">5</a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="#">&raquo;</a>
-        </li>
-    </ul>
-</div>
-
-<!-- Bootstrap core JavaScript -->
-<script src="https://startbootstrap.github.io/startbootstrap-small-business/vendor/jquery/jquery.min.js"></script>
-<script src="https://startbootstrap.github.io/startbootstrap-small-business/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>

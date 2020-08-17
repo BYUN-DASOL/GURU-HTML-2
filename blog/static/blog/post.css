@@ -10,88 +10,44 @@ a{text-decoration:none}
 a:hover,a:active,a:focus{text-decoration:underline}
 
   /* style */
-  .content{
-    width:800px;
-    margin:0px auto;
-  }
-  .content h1 {
-    padding: 10px 10px 20px;
-    border-bottom: 1px solid #ccc;
-  }
-  .fixed_img_col {}
-  .fixed_img_col ul {
-    padding: 10px 10px 20px;
-    /*border-bottom: 1px solid #ccc;*/
-    *zoom:1;
-
-  }
-  .fixed_img_col ul:after{
-    content:'';
-    display:block;
+#wrap {
+    width: 1140px;
+    margin: 0 auto;
+    font-family: 'Trebuchet MS',helvetica,sans-serif;
+}
+#header {
+    width: 1140px;
+    padding: 20px;
+}
+#container:after {
+    content: '';
+    display: block;
     clear: both;
-  }
-  .fixed_img_col li {
+}
+#container #content {
     float: left;
-    width: 120px;
-    height: 175px;
-    /*border-bottom: 1px solid #ccc;*/
-    padding: 10px 0 10px ;
-    /*margin-top:-1px;
-    margin-bottom:-1px;*/
-    margin:30px;
-    padding:0px;
-
+    width: 98%;
+    padding-left: 20px
+}
+#container #content .post {
+    padding: 20px;
+    border: solid #A6ACAF;
+    background-color: #F2F3F4 ;
+}
+#container #content .post .img-fluid{
+    width:600px;
   }
-  .fixed_img_col li a{
-    display: block;
-    color: #333;
-    text-decoration: none;
-  }
-  .fixed_img_col li a .thumb {
-    position: relative;
-    display: block;
-  }
-  .fixed_img_col li a .thumb img {}
-
-  .fixed_img_col li a .thumb em {
-
-    display: none;
-    opacity: .6;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width :100%;
-    background-color: #333;
-    color: #fff;
-    font-weight: bold;
-    text-align: center;
-    line-height:120px;
-
-
-  }
-  .fixed_img_col li a:hover .thumb em {
-    display: block;
-  }
-
-  .fixed_img_col li p {
-    color: #666;
-    font-size: .9em;
-  }
-
-  .area{
-  position: absolute;
-  margin: 50px 20px 0;
-  right:50px;
-  }
-  .btn_pack{}
-  .btn_pack button:hover
-
-
-/* TopButton Style*/
-  .btn btn-secondary float-right{
-  position: absolute;
-  margin: 50px 20px 0;
-  right:50px;
-  }
-  .btn_pack{}
-  .btn_pack button:hover
+.content h1 {
+    padding: 200px 10px 250px;
+    border-bottom: 1px solid #ccc;
+    background-color: red;
+}
+.top .btn{
+    display:scroll;
+    position:fixed;
+    bottom:100px;
+    right:50px;
+}
+.area{
+    padding:20px 0 0 1000px;
+}
