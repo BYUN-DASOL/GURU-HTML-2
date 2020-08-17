@@ -1,21 +1,21 @@
-  html,body{width:100%;height:100%;}
-  body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0;}
-  body,input,textarea,select,button,table{font-family:'Malgun Gothic',Dotum,AppleGothic,sans-serif;font-size:12px}
-  img,fieldset{border:0}
-  img{vertical-align:top}
-  ul,ol{list-style:normal}
-  a{text-decoration:none}
-  em,address{font-style:normal}
-  a{text-decoration:none}
-  a:hover,a:active,a:focus{text-decoration:underline}
+html,body{width:100%;height:100%;}
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0;}
+body,input,textarea,select,button,table{font-family:'Malgun Gothic',Dotum,AppleGothic,sans-serif;font-size:12px}
+img,fieldset{border:0}
+img{vertical-align:top}
+ul,ol{list-style:normal}
+a{text-decoration:none}
+em,address{font-style:normal}
+a{text-decoration:none}
+a:hover,a:active,a:focus{text-decoration:underline}
 
   /* style */
   #content{
     width:800px;
     margin:0 auto;
   }
-  /*#content h1 {
-    padding: 200px 0px 250px;
+  #content h1 {
+    padding: 200px 10px 250px;
     border-bottom: 1px solid #ccc;
   }*/
   .fixed_img_col {}
@@ -98,3 +98,11 @@
   }
   .btn_pack{}
   .btn_pack button:hover
+
+/* TopButton Style*/
+   .top{
+   display:scroll;
+   position:fixed;
+   bottom:100px;
+   right:50px;
+   }

@@ -2,18 +2,27 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ object.title }}</title>
-
+    
+    <link rel="stylesheet" href="/static/blog/bootstrap.css?after">
+    <link rel="stylesheet" href="/static/blog/bootstrap.min.css?after">
+    <link rel="stylesheet" href="/static/blog/layout.css?after">
+    <link rel="stylesheet" href="/static/blog/post.css?after">
+<!--    <link rel="stylesheet" href="/static/css/app.css">-->
+    <link rel="css/subcide.css" href="stylesheet">
 </head>
 
 <body>
 
 <!-- Page Content -->
-<div class="container">
+<div class="content">
 
   <!-- Portfolio Item Heading -->
   <h1 class="my-4">{{ object.title }}
-    <small>{{ object.category }}</small>
+    <small>-{{ object.category }}</small>
   </h1>
     <p><pre>{{object.content}}</pre></p>
   <div class="fixed_img_col">
@@ -21,7 +30,7 @@
     <li>
       <a href="#">
         <span class="thumb">
-          <img src ="img/apple-touch-icon.png" alt="">
+          <img src ="static/img/apple-touch-icon.png" alt="">
           <em>Category</em>
         </span>
         <!--<strong>이미지 제목</strong>-->
@@ -32,7 +41,7 @@
     <li>
       <a href="#">
         <span class="thumb">
-          <img src ="img/apple-touch-icon.png" alt="">
+          <img src ="static/img/apple-touch-icon.png" alt="">
           <em>Category</em>
         </span>
         <!--<strong>이미지 제목</strong>-->
@@ -43,7 +52,7 @@
     <li>
       <a href="#">
         <span class="thumb">
-          <img src ="img/apple-touch-icon.png" alt="">
+          <img src ="static/img/apple-touch-icon.png" alt="">
           <em>Category</em>
         </span>
         <!--<strong>이미지 제목</strong>-->
@@ -54,7 +63,7 @@
     <li>
       <a href="#">
         <span class="thumb">
-          <img src ="img/apple-touch-icon.png" alt="">
+          <img src ="static/img/apple-touch-icon.png" alt="">
           <em>Category</em>
         </span>
     <!--<strong>이미지 제목</strong>-->
@@ -63,7 +72,8 @@
     </li>
     </ul>
   </div>
-    
+
+<!--전체게시글 Button-->
 <div class= "area">
 	<span class="btn_pack">
 		<a href="#">
@@ -71,6 +81,15 @@
 		</a>
 	</span>
 </div>
+
+<!--Top 버튼-->
+    <div class="top">
+    <span class="btn_top">
+    <a href="#">
+        <button>Top</button>
+    </a>
+    </span>
+    </div>
 
 </div>
 <!-- /.container -->
