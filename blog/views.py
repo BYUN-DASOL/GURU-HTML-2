@@ -9,6 +9,7 @@ from django.db.models import Q
 
 class PostList(ListView):
     model = Post
+    paginate_by = 4
 
     def get_queryset(self):
         return Post.objects.order_by('-created')
