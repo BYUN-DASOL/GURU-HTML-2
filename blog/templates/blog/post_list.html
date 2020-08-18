@@ -161,70 +161,25 @@
         <!-- content -->
         <div id="content">
         <div class="inn">
-             <h4 class="my-4">인기 게시물</h4>
+             <h4 class="my-4">최근 게시물</h4>
                     <!-- Project One -->
-                    <div class="row">
-                        <div class="col-md-7">
-                            <a href="#">
-                                <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/500x300" alt="">
-                            </a>
+                    {% for p in object_list|slice:":4" %}
+                        <div class="row">
+                            <div class="col-md-7">
+                                <a href="{{ p.get_absolute_url }}">
+                                    <img class="img-fluid rounded mb-3 mb-md-0" src="{{ p.head_image.url }}" alt="음식 사진">
+                                </a>
+                            </div>
+                            <div class="col-5">
+                                <a class="title" href="{{ p.get_absolute_url }}"><h3>{{ p.title }}</h3></a>
+                                <a class="post" href="{{ p.get_absolute_url }}">{{ p.content | truncatewords:30}}</a>
+                            </div>
                         </div>
-                        <div class="col-5">
-                            <a class="title" href="#"><h3>Project One</h3></a>
-                            <a class="post" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</a>
-                        </div>
-                    </div>
+                        <hr>
+                    {% endfor %}
                     <!-- /.row -->
-
-                    <hr>
-
-                    <!-- Project Two -->
-                    <div class="row">
-                        <div class="col-md-7">
-                            <a href="#">
-                                <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/500x300" alt="">
-                            </a>
-                        </div>
-                        <div class="col-5">
-                            <a class="title" href="#"><h3>Project Two</h3></a>
-                            <a class="post" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</a>
-                        </div>
-                    </div>
-                    <!-- /.row -->
-
-                    <hr>
-
-                    <!-- Project Three -->
-                    <div class="row">
-                        <div class="col-md-7">
-                            <a href="#">
-                                <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/500x300" alt="">
-                            </a>
-                        </div>
-                        <div class="col-5">
-                            <a class="title" href="#"><h3>Project Three</h3></a>
-                            <a class="post" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolore dolorum earum est, eveniet, illo modi molestiae necessitatibus, perspiciatis quia quo sed. A doloribus excepturi in incidunt mollitia nobis praesentium, quas suscipit temporibus tenetur vel.</a>
-                        </div>
-                    </div>
-                    <!-- /.row -->
-
-                    <hr>
-
-                    <!-- Project Four -->
-                    <div class="row">
-                        <div class="col-md-7">
-                            <a href="#">
-                                <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/500x300" alt="">
-                            </a>
-                        </div>
-                        <div class="col-5">
-                            <a class="title" href="#"><h3>Project Four</h3></a>
-                            <a class="post" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolorem dolorum, eius enim eum excepturi, id labore laudantium numquam, odit officiis omnis optio perspiciatis praesentium quos rerum sed tenetur ullam? Aperiam dolores provident rem saepe!</a>
-                        </div>
-                    </div>
         </div>
                     <!-- Page Content -->
-
                     <div class="card-post">
                             {% for p in object_list %}
                                     <div class="col-lg-4 col-sm-6 mb-4">
