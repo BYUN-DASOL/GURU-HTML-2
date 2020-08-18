@@ -26,10 +26,15 @@
     border: solid #A6ACAF;
     background-color: #F2F3F4 ;
 }
-
 #container #content .inn .row .col-5 .post{
     color: #909497;
 }
 #container #content .inn .row .col-5 .title{
     color: #212F3C;
+}
+.top .btn{
+    display:scroll;
+    position:fixed;
+    bottom:100px;
+    right:50px;
 }
