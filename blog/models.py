@@ -47,6 +47,14 @@ class Comment(models.Model):
 
     def get_markdown_content(self):
         return markdown(self.text)
+    
+    comment 000 = create_comment(post_000, text = a test_comment)
+    
+    
+ comments_div = main_div.find('div', id= comment_list)
+ self.assertIn(comment_000.author.username, comments_div.text)
+ self.assertIn(comment_000.text, comments_div.text)
+
 
 
 
