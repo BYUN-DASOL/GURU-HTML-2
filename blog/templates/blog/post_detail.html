@@ -2,82 +2,122 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ object.title }}</title>
-
+    <link rel="stylesheet" href="/static/blog/bootstrap.css?after">
+    <link rel="stylesheet" href="/static/blog/post.css?after">
+    <link href="https://startbootstrap.github.io/startbootstrap-shop-item/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
-
-<!-- Page Content -->
-<div class="container">
-
-  <!-- Portfolio Item Heading -->
-  <h1 class="my-4">{{ object.title }}
-    <small>{{ object.category }}</small>
-  </h1>
-    <p><pre>{{object.content}}</pre></p>
-  <div class="fixed_img_col">
-    <ul>
-    <li>
-      <a href="#">
-        <span class="thumb">
-          <img src ="img/apple-touch-icon.png" alt="">
-          <em>Category</em>
+<div id="wrap">
+    <div id="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="http://127.0.0.1:8000/">백종원의 레시피</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://127.0.0.1:8000/blog/category/한식/">한식</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://127.0.0.1:8000/blog/category/중식/">중식</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://127.0.0.1:8000/blog/category/일식/">일식</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://127.0.0.1:8000/blog/category/양식/">양식</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="container">
+        <div id="content">
+             <div class="post">
+                 <!-- Portfolio Item Heading -->
+                 <h1 class="my-4">{{ object.title }}
+                     <small>-{{ object.category }}</small>
+                 </h1>
+                 <p><img class="img-fluid" src="{{ object.head_image.url }}" alt=""></p>
+                 <pre>{{ object.get_markdown_content | safe }}</pre>
+             </div>
+        </div>
+    </div>
+    <div class="top">
+        <a href="#header"><button class="btn btn-secondary" type="button">TOP</button></a>
+    </div>
+    <!--전체게시글 Button-->
+    <div class= "area">
+        <span class="btn_pack">
+            <a href="http://127.0.0.1:8000/blog/category/{{ object.category }}/">
+                <button class="btn btn-dark" type="button">전체 글 보기</button>
+            </a>
         </span>
-        <!--<strong>이미지 제목</strong>-->
-      </a>
-      <!--<p>2020-08-13</p>-->
-    </li>
+    </div>
+    <!--Top버튼-->
 
-    <li>
-      <a href="#">
-        <span class="thumb">
-          <img src ="img/apple-touch-icon.png" alt="">
-          <em>Category</em>
-        </span>
-        <!--<strong>이미지 제목</strong>-->
-      </a>
-      <!--<p>2020-08-13</p>-->
-    </li>
+    <!--댓글-->
+        <!-- Comments Form -->
+        <div class="card my-4">
+          <h5 class="card-header">Leave a Comment:</h5>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
 
-    <li>
-      <a href="#">
-        <span class="thumb">
-          <img src ="img/apple-touch-icon.png" alt="">
-          <em>Category</em>
-        </span>
-        <!--<strong>이미지 제목</strong>-->
-      </a>
-      <!--<p>2020-08-13</p>-->
-    </li>
+        <div id="comment-list">
+            {% for comment in object.comment_set.all %}
+            <!-- Single Comment -->
+            <div class="media mb-4">
+                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                <div class="media-body">
+                    <h5 class="mt-0">{{ comment.author }}</h5>
+                    {{ comment.get_markdown_content | safe }}
+                </div>
+            </div>
+            {% endfor%}
+        </div>
+        <!-- Comment with nested comments -->
+        <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">Commenter Name</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
 
-    <li>
-      <a href="#">
-        <span class="thumb">
-          <img src ="img/apple-touch-icon.png" alt="">
-          <em>Category</em>
-        </span>
-    <!--<strong>이미지 제목</strong>-->
-      </a>
-      <!--<p>2020-08-13</p>-->
-    </li>
-    </ul>
-  </div>
-    
-<div class= "area">
-	<span class="btn_pack">
-		<a href="#">
-			<button>전체 글 보기</button>
-		</a>
-	</span>
-</div>
+            <div class="media mt-4">
+              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+              <div class="media-body">
+                <h5 class="mt-0">Commenter Name</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </div>
+            </div>
 
-</div>
+            <div class="media mt-4">
+              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+              <div class="media-body">
+                <h5 class="mt-0">Commenter Name</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
 <!-- /.container -->
-
-
+</div>
 </body>
 </html>
-
-
-

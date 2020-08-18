@@ -1,0 +1,35 @@
+#wrap {
+    width: 1140px;
+    margin: 0 auto;
+    font-family: 'Trebuchet MS',helvetica,sans-serif;
+}
+#header {
+    width: 1140px;
+    padding: 20px;
+}
+#container {
+    padding-bottom: 40px;
+    *zoom: 1;
+}
+#container:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+#container #content {
+    float: left;
+    width: 98%;
+    padding-left: 20px
+}
+#container #content .inn {
+    padding: 20px;
+    border: solid #A6ACAF;
+    background-color: #F2F3F4 ;
+}
+
+#container #content .inn .row .col-5 .post{
+    color: #909497;
+}
+#container #content .inn .row .col-5 .title{
+    color: #212F3C;
+}

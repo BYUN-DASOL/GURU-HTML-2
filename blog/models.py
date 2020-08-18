@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from markdownx.models import MarkdownxField
+from markdownx.utils import markdown
 
 #글의 분류
 class Category(models.Model):
@@ -16,7 +18,7 @@ class Post(models.Model):
     # 블로그에서 제목을 의미, max_length로 글자 수 제한을 둠.
     title = models.CharField(max_length=30)
     # 글에 들어갈 내용, TextField는 장문의 글을 받아올 수 있음.
-    content = models.TextField()
+    content = MarkdownxField()
 
     head_image = models.ImageField(upload_to='%Y/%m/%d/', blank=True)
 
@@ -34,6 +36,17 @@ class Post(models.Model):
     #1번 글의 경우 -> post/1
     def get_absolute_url(self):
         return '/blog/{}/'.format(self.pk)
+
+    def get_markdown_content(self):
+        return markdown(self.content)
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    text = MarkdownxField()
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def get_markdown_content(self):
+        return markdown(self.text)
 
 
 
