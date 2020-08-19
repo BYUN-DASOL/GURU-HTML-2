@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from markdownx.models import MarkdownxField
 from markdownx.utils import markdown
 
-from embed_video.fields import EmbedVideoField
 
 #글의 분류
 class Category(models.Model):
@@ -42,22 +41,6 @@ class Post(models.Model):
     def get_markdown_content(self):
         return markdown(self.content)
 
-
-    class Comment(models.Model):	
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)	
-    text = MarkdownxField()	
-    author = models.ForeignKey(User, on_delete=models.CASCADE)	
-
-
-    def get_markdown_content(self):	
-        return markdown(self.text)	
-
-    comment 000 = create_comment(post_000, text = a test_comment)	
-
-
-    comments_div = main_div.find('div', id= comment_list)	
-    self.assertIn(comment_000.author.username, comments_div.text)	
-    self.assertIn(comment_000.text, comments_div.text)
 
 
 
