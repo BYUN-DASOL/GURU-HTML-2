@@ -21,4 +21,7 @@ urlpatterns = [
     path('blog/category/<str:slug>/', views.PostListByCategory),
     path('blog/<int:pk>/', views.PostDetail.as_view()),
     path('', views.PostList.as_view()),
+
+
+
 ]

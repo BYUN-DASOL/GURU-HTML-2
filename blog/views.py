@@ -7,6 +7,7 @@ from .models import Post, Category
 from django.views.generic import ListView, DetailView
 from django.db.models import Q
 
+
 class PostList(ListView):
     model = Post
 

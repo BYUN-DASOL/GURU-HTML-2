@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from markdownx.models import MarkdownxField
 from markdownx.utils import markdown
 
+from embed_video.fields import EmbedVideoField
+
 #글의 분류
 class Category(models.Model):
     name = models.CharField(max_length=25, help_text="블로그 글의 분류를 입력하세요.(ex:한식)")
