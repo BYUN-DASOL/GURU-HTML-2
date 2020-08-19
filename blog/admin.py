@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Post, Comment
+from .models import Category, Post
 
 
 
@@ -12,7 +12,6 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Post)
 
-admin.site.register(Comment)
 admin.site.register(Category, CategoryAdmin)
 
 
