@@ -16,6 +16,7 @@ a:hover,a:active,a:focus{text-decoration:underline}
     font-family: 'Trebuchet MS',helvetica,sans-serif;
 }
 #header {
+    width: 1140px;
     padding: 20px;
 }
 #container {
